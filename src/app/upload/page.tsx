@@ -43,7 +43,7 @@ export default function MediaUploadPage() {
         <Card>
           <CardContent className="p-6">
             <label className="text-sm font-medium text-white block mb-2">Select Event to Upload To</label>
-            <select className="w-full max-w-md h-10 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+            <select className="w-full max-w-md h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all">
               <option className="bg-background">Global Tech Conference 2024</option>
               <option className="bg-background">Sarah & James Wedding</option>
             </select>
@@ -51,8 +51,8 @@ export default function MediaUploadPage() {
         </Card>
 
         {/* Upload Area */}
-        <Card className="border-blue-500/20 shadow-[0_0_40px_rgba(59,130,246,0.1)] relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500" />
+        <Card className="border-primary/10 shadow-[0_0_40px_rgba(229,193,88,0.04)] relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] rounded-2xl shadow-xl backdrop-blur-3xl">
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E5C158] to-[#A38A4D]" />
           <CardContent className="p-8">
             <div className="flex items-center justify-between mb-6">
               <div>

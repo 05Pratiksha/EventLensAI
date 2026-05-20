@@ -42,22 +42,22 @@ function MatchesPageContent() {
   if (isScanning) {
     return (
       <div className="min-h-screen bg-background flex flex-col items-center justify-center p-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-primary)_0%,_transparent_40%)] opacity-[0.05] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#E5C158_0%,_transparent_40%)] opacity-[0.04] pointer-events-none" />
         
         <motion.div
-          animate={{ scale: [1, 1.1, 1] }}
-          transition={{ repeat: Infinity, duration: 2 }}
+          animate={{ scale: [1, 1.05, 1] }}
+          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           className="relative mb-8"
         >
-          <div className="w-24 h-24 rounded-full border-4 border-blue-500/30 flex items-center justify-center relative z-10 bg-background/50 backdrop-blur-md">
-            <div className="w-20 h-20 rounded-full border-4 border-blue-500 border-t-transparent animate-spin" />
+          <div className="w-24 h-24 rounded-full border border-primary/20 flex items-center justify-center relative z-10 bg-zinc-950/40 backdrop-blur-2xl">
+            <div className="w-20 h-20 rounded-full border border-primary/30 border-t-primary animate-spin" />
           </div>
-          <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full" />
+          <div className="absolute inset-0 bg-primary/10 blur-xl rounded-full" />
         </motion.div>
         
-        <h2 className="text-2xl font-bold mb-2">Scanning Gallery</h2>
-        <p className="text-muted-foreground animate-pulse text-center max-w-sm">
-          Our AI neural engine is analyzing thousands of photos to find your perfect matches...
+        <h2 className="text-xl font-bold mb-2 tracking-wide text-white uppercase">Scanning Exhibition</h2>
+        <p className="text-xs text-zinc-400 animate-pulse text-center max-w-sm">
+          Our biometric neural engine is analyzing portrait registers to find your matches...
         </p>
       </div>
     );
@@ -65,39 +65,39 @@ function MatchesPageContent() {
 
   return (
     <div className="min-h-screen bg-background pb-20">
-      <div className="sticky top-0 z-40 bg-background/80 backdrop-blur-xl border-b border-white/10 px-6 py-4 flex items-center justify-between">
+      <div className="sticky top-0 z-40 bg-[#060608]/80 backdrop-blur-xl border-b border-white/[0.04] px-6 py-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="rounded-full" onClick={() => router.back()}>
-            <ArrowLeft className="w-5 h-5" />
+          <Button variant="ghost" size="icon" className="rounded-full border border-white/5 hover:bg-white/5 text-zinc-300" onClick={() => router.back()}>
+            <ArrowLeft className="w-4 h-4" />
           </Button>
           <div>
-            <h1 className="font-bold">{event?.title || 'Your Matches'}</h1>
-            <p className="text-xs text-emerald-400 font-medium flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3" />
-              Found {photos.length} photos
+            <h1 className="font-bold text-white text-sm tracking-wide uppercase">{event?.title || 'Your Matches'}</h1>
+            <p className="text-[10px] text-primary font-bold uppercase tracking-wider flex items-center gap-1.5 mt-0.5">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              Found {photos.length} matches
             </p>
           </div>
         </div>
         <div className="flex gap-2">
-          <Button variant="outline" size="icon" className="md:hidden">
+          <Button variant="outline" size="icon" className="md:hidden border-white/10 hover:bg-white/5 text-white">
             <Download className="w-4 h-4" />
           </Button>
-          <Button variant="premium" className="hidden md:flex">
-            <Download className="w-4 h-4 mr-2" />
-            Download All
+          <Button variant="premium" className="hidden md:flex h-9 text-xs font-bold px-4">
+            <Download className="w-3.5 h-3.5 mr-2" />
+            Download Collection
           </Button>
         </div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-8">
-        <div className="mb-8 p-6 glass rounded-2xl border-emerald-500/20 bg-emerald-500/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mb-8 p-6 glass-luxury rounded-2xl border border-white/[0.04] bg-neutral-950/45 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h2 className="text-xl font-bold mb-1">We found your memories!</h2>
-            <p className="text-sm text-muted-foreground">Select individual photos to download or grab them all at once.</p>
+            <h2 className="text-lg font-bold mb-1 text-gradient-luxury">We found your portraits.</h2>
+            <p className="text-xs text-zinc-400">Select individual pieces to download or grab your entire collection at once.</p>
           </div>
-          <Button variant="outline" className="shrink-0 bg-white/5">
-            <Share2 className="w-4 h-4 mr-2" />
-            Share Gallery Link
+          <Button variant="outline" className="shrink-0 bg-white/[0.02] border-white/10 hover:bg-white/5 text-xs text-white">
+            <Share2 className="w-3.5 h-3.5 mr-2" />
+            Share Collection Link
           </Button>
         </div>
 

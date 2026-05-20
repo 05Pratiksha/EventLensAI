@@ -54,10 +54,10 @@ export function UploadDropzone({ onUpload, isUploading, progress = 0 }: UploadDr
   return (
     <div className="w-full">
       <div 
-        className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-200 ${
+        className={`relative border-2 border-dashed rounded-2xl p-12 text-center transition-all duration-300 ${
           isDragActive 
-            ? 'border-blue-500 bg-blue-500/5' 
-            : 'border-white/20 bg-white/5 hover:border-white/40 hover:bg-white/10'
+            ? 'border-primary bg-primary/[0.02]' 
+            : 'border-white/10 bg-white/[0.01] hover:border-primary/20 hover:bg-primary/[0.01]'
         }`}
         onDragEnter={handleDrag}
         onDragLeave={handleDrag}
@@ -74,8 +74,8 @@ export function UploadDropzone({ onUpload, isUploading, progress = 0 }: UploadDr
         />
         
         <div className="flex flex-col items-center pointer-events-none">
-          <div className="w-16 h-16 rounded-full bg-blue-500/10 flex items-center justify-center mb-6">
-            <Upload className="w-8 h-8 text-blue-500" />
+          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-6">
+            <Upload className="w-8 h-8 text-primary" />
           </div>
           <h3 className="text-xl font-bold mb-2 text-white">Drag & drop your media here</h3>
           <p className="text-muted-foreground mb-6 max-w-sm">
@@ -106,14 +106,14 @@ export function UploadDropzone({ onUpload, isUploading, progress = 0 }: UploadDr
             </div>
             
             {isUploading && (
-              <div className="mb-6 p-4 rounded-xl bg-blue-500/10 border border-blue-500/20">
+              <div className="mb-6 p-4 rounded-xl bg-primary/10 border border-primary/20">
                 <div className="flex justify-between text-sm mb-2">
-                  <span className="text-blue-400 font-medium">Uploading & AI Scanning...</span>
+                  <span className="text-primary font-semibold">Uploading & AI Scanning...</span>
                   <span className="text-white">{progress}%</span>
                 </div>
                 <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                   <motion.div 
-                    className="h-full bg-blue-500"
+                    className="h-full bg-gradient-to-r from-[#E5C158] to-[#A38A4D]"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                   />
@@ -125,7 +125,7 @@ export function UploadDropzone({ onUpload, isUploading, progress = 0 }: UploadDr
               {selectedFiles.map((file, index) => (
                 <div key={`${file.name}-${index}`} className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/10">
                   <div className="flex items-center gap-3">
-                    <FileType className="w-5 h-5 text-blue-400" />
+                    <FileType className="w-5 h-5 text-primary" />
                     <div>
                       <p className="text-sm font-medium truncate max-w-[200px] sm:max-w-xs">{file.name}</p>
                       <p className="text-xs text-muted-foreground">{(file.size / 1024 / 1024).toFixed(2)} MB</p>

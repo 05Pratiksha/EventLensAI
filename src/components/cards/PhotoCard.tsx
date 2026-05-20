@@ -27,23 +27,23 @@ export function PhotoCard({ photo, selectable, selected, onSelect, index = 0 }: 
         loading="lazy"
       />
       
-      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-        <Button size="icon" variant="glass" className="rounded-full">
+      <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+        <Button size="icon" variant="glass" className="rounded-full bg-primary/25 border-primary/20 hover:bg-primary/35 text-white">
           <Download className="w-4 h-4" />
         </Button>
       </div>
 
       {photo.matchScore && (
-        <div className="absolute top-2 left-2 px-2 py-1 bg-blue-600/80 backdrop-blur-md rounded-md text-xs font-bold flex items-center gap-1 shadow-lg">
-          <Zap className="w-3 h-3 text-yellow-300 fill-yellow-300" />
+        <div className="absolute top-2 left-2 px-2 py-0.5 bg-primary backdrop-blur-md rounded text-[9px] font-black uppercase tracking-widest text-black flex items-center gap-1 shadow-lg">
+          <Zap className="w-2.5 h-2.5 fill-black stroke-black" />
           {photo.matchScore}% Match
         </div>
       )}
 
       {selectable && (
         <div className="absolute top-2 right-2">
-          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${selected ? 'bg-blue-500 border-blue-500' : 'border-white/50 bg-black/20 group-hover:border-white'}`}>
-            {selected && <Check className="w-4 h-4 text-white" />}
+          <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center transition-colors ${selected ? 'bg-primary border-primary' : 'border-white/40 bg-black/40 group-hover:border-white'}`}>
+            {selected && <Check className="w-3.5 h-3.5 text-black stroke-[3px]" />}
           </div>
         </div>
       )}

@@ -1,27 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #0a0a0b;
-  --color-foreground: #f8fafc;
+  --color-background: #060608;
+  --color-foreground: #f3f4f6;
   
-  --color-primary: #3b82f6;
-  --color-primary-foreground: #ffffff;
+  --color-primary: #E5C158;
+  --color-primary-foreground: #060608;
   
-  --color-secondary: #1e293b;
-  --color-secondary-foreground: #f8fafc;
+  --color-secondary: #121214;
+  --color-secondary-foreground: #f3f4f6;
   
-  --color-muted: #1e293b;
-  --color-muted-foreground: #94a3b8;
+  --color-muted: #18181c;
+  --color-muted-foreground: #a1a1aa;
   
-  --color-accent: #3b82f6;
-  --color-accent-foreground: #f8fafc;
+  --color-accent: #E5C158;
+  --color-accent-foreground: #060608;
   
   --color-destructive: #ef4444;
-  --color-destructive-foreground: #f8fafc;
+  --color-destructive-foreground: #f3f4f6;
   
-  --color-border: #1e293b;
-  --color-input: #1e293b;
-  --color-ring: #3b82f6;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-input: #121214;
+  --color-ring: #E5C158;
   
   --radius-lg: 0.75rem;
   --radius-md: calc(0.75rem - 2px);
@@ -47,20 +47,33 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(229, 193, 88, 0.015) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(163, 138, 77, 0.015) 0px, transparent 50%);
+    background-attachment: fixed;
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/[0.02] backdrop-blur-md border border-white/5;
   }
   
   .glass-dark {
-    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+    @apply bg-black/60 backdrop-blur-2xl border border-white/5;
+  }
+
+  .glass-luxury {
+    @apply bg-neutral-950/45 backdrop-blur-3xl border border-white/[0.04] shadow-[inset_0_1px_1px_rgba(255,255,255,0.02),0_24px_48px_-12px_rgba(0,0,0,0.5)];
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-br from-white to-slate-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-zinc-100 to-zinc-400;
+  }
+
+  .text-gradient-luxury {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F9F6F0] via-[#E5C158] to-[#A38A4D];
   }
 }
+
 

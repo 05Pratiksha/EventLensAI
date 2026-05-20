@@ -60,7 +60,7 @@ export default function CreateEventPage() {
           <Card>
             <CardContent className="p-6 space-y-6">
               <h3 className="text-lg font-semibold flex items-center gap-2">
-                <Sparkles className="w-5 h-5 text-blue-500" />
+                <Sparkles className="w-4.5 h-4.5 text-primary" />
                 Basic Details
               </h3>
               
@@ -80,7 +80,7 @@ export default function CreateEventPage() {
                   <label className="text-sm font-medium text-white">Event Type</label>
                   <select 
                     name="type"
-                    className="w-full h-10 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    className="w-full h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all"
                     value={formData.type}
                     onChange={handleChange}
                   >
@@ -107,7 +107,7 @@ export default function CreateEventPage() {
                   <label className="text-sm font-medium text-white">Description (Optional)</label>
                   <textarea 
                     name="description"
-                    className="w-full h-24 rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 resize-none"
+                    className="w-full h-24 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 resize-none transition-all"
                     placeholder="Brief details about the event..."
                     value={formData.description}
                     onChange={handleChange}

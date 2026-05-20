@@ -36,7 +36,7 @@ function ToggleSwitch({
         type="button"
         onClick={() => onChange(!checked)}
         className={`w-11 h-6 rounded-full p-0.5 transition-colors duration-300 relative focus:outline-none shrink-0 ${
-          checked ? "bg-gradient-to-r from-violet-500 to-cyan-500" : "bg-white/10"
+          checked ? "bg-[#E5C158]" : "bg-white/10"
         }`}
       >
         <motion.div
@@ -342,15 +342,15 @@ export default function SettingsPage() {
                   onClick={() => setActiveTab(item.id)}
                   className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-xs font-semibold tracking-wide transition-all duration-300 ${
                     activeTab === item.id 
-                      ? "bg-gradient-to-r from-violet-600/10 to-cyan-500/10 border border-violet-500/30 text-white shadow-lg shadow-violet-500/5" 
+                      ? "bg-primary/[0.04] border border-primary/20 text-white shadow-lg shadow-primary/5" 
                       : "border border-transparent text-zinc-400 hover:text-white hover:bg-white/[0.02]"
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <item.icon className={`w-4 h-4 ${activeTab === item.id ? "text-violet-400" : "text-zinc-500"}`} />
+                    <item.icon className={`w-4 h-4 ${activeTab === item.id ? "text-primary" : "text-zinc-500"}`} />
                     {item.label}
                   </div>
-                  {activeTab === item.id && <ChevronRight className="w-3.5 h-3.5 text-cyan-400" />}
+                  {activeTab === item.id && <ChevronRight className="w-3.5 h-3.5 text-primary" />}
                 </button>
               ))}
             </div>
@@ -363,7 +363,7 @@ export default function SettingsPage() {
                   onClick={() => setActiveTab(item.id)}
                   className={`snap-center flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-bold border whitespace-nowrap transition-all duration-300 ${
                     activeTab === item.id 
-                      ? "bg-violet-500/10 border-violet-500/30 text-white" 
+                      ? "bg-primary/10 border-primary/30 text-white" 
                       : "bg-white/5 border-white/5 text-zinc-400"
                   }`}
                 >
@@ -389,9 +389,9 @@ export default function SettingsPage() {
                 {/* 1. GENERAL PROFILE SETTINGS */}
                 {activeTab === "general" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <User className="w-5 h-5 text-violet-400" />
+                        <User className="w-5 h-5 text-primary" />
                         Studio Profile Settings
                       </h3>
                       
@@ -399,7 +399,7 @@ export default function SettingsPage() {
                         {/* Profile avatar photo upload */}
                         <div className="flex flex-col sm:flex-row sm:items-center gap-6 pb-6 border-b border-white/5">
                           <div className="relative group cursor-pointer">
-                            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-violet-500/50 transition-colors duration-300">
+                            <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-white/10 group-hover:border-primary/50 transition-colors duration-300">
                               {/* eslint-disable-next-line @next/next/no-img-element */}
                               <img src={settings?.profilePhoto} alt="Marcus" className="w-full h-full object-cover" />
                             </div>
@@ -425,7 +425,7 @@ export default function SettingsPage() {
                               type="text" 
                               value={studioName} 
                               onChange={e => setStudioName(e.target.value)} 
-                              className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-sm font-semibold text-white focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.07] transition-all duration-300"
+                              className="w-full h-11 bg-zinc-950/60 border border-white/5 rounded-xl px-4 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all duration-300"
                             />
                           </div>
 
@@ -435,7 +435,7 @@ export default function SettingsPage() {
                               type="text" 
                               value={ownerName} 
                               onChange={e => setOwnerName(e.target.value)} 
-                              className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-sm font-semibold text-white focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.07] transition-all duration-300"
+                              className="w-full h-11 bg-zinc-950/60 border border-white/5 rounded-xl px-4 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all duration-300"
                             />
                           </div>
 
@@ -445,7 +445,7 @@ export default function SettingsPage() {
                               type="email" 
                               value={email} 
                               onChange={e => setEmail(e.target.value)} 
-                              className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-sm font-semibold text-white focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.07] transition-all duration-300"
+                              className="w-full h-11 bg-zinc-950/60 border border-white/5 rounded-xl px-4 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all duration-300"
                             />
                           </div>
 
@@ -455,7 +455,7 @@ export default function SettingsPage() {
                               type="text" 
                               value={phone} 
                               onChange={e => setPhone(e.target.value)} 
-                              className="w-full h-11 bg-white/5 border border-white/10 rounded-xl px-4 text-sm font-semibold text-white focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.07] transition-all duration-300"
+                              className="w-full h-11 bg-zinc-950/60 border border-white/5 rounded-xl px-4 text-sm text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all duration-300"
                             />
                           </div>
                         </div>
@@ -480,7 +480,7 @@ export default function SettingsPage() {
                           variant="premium" 
                           onClick={handleSaveGeneral} 
                           disabled={saving}
-                          className="h-10 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white flex items-center gap-2"
+                          className="h-10 text-xs font-bold flex items-center gap-2"
                         >
                           {saving ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                           Save Profile Changes
@@ -495,9 +495,9 @@ export default function SettingsPage() {
                 {/* 3. GALLERY OPTIONS SETTINGS */}
                 {activeTab === "gallery" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <ImageIcon className="w-5 h-5 text-violet-400" />
+                        <ImageIcon className="w-5 h-5 text-primary" />
                         Interactive Gallery Rules
                       </h3>
 
@@ -552,7 +552,7 @@ export default function SettingsPage() {
                                   onClick={() => setImageQuality(quality.id)}
                                   className={`p-3 rounded-xl border text-center transition-all duration-300 ${
                                     imageQuality === quality.id 
-                                      ? "bg-gradient-to-tr from-violet-600/15 to-cyan-500/15 border-violet-500/50 text-white" 
+                                      ? "bg-primary/10 border-primary/30 text-white" 
                                       : "bg-white/5 border-white/5 text-zinc-400 hover:text-white"
                                   }`}
                                 >
@@ -580,7 +580,7 @@ export default function SettingsPage() {
                                   onClick={() => setLayoutStyle(layout.id)}
                                   className={`p-3 rounded-xl border text-center transition-all duration-300 ${
                                     layoutStyle === layout.id 
-                                      ? "bg-gradient-to-tr from-violet-600/15 to-cyan-500/15 border-violet-500/50 text-white" 
+                                      ? "bg-primary/10 border-primary/30 text-white" 
                                       : "bg-white/5 border-white/5 text-zinc-400 hover:text-white"
                                   }`}
                                 >
@@ -600,7 +600,7 @@ export default function SettingsPage() {
                           variant="premium" 
                           onClick={handleSaveGallery} 
                           disabled={saving}
-                          className="h-10 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white flex items-center gap-2"
+                          className="h-10 text-xs font-bold flex items-center gap-2"
                         >
                           {saving ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                           Save Gallery Options
@@ -613,9 +613,9 @@ export default function SettingsPage() {
                 {/* 4. AI & NEURAL SCANNING SETTINGS */}
                 {activeTab === "ai" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <Cpu className="w-5 h-5 text-violet-400" />
+                        <Cpu className="w-5 h-5 text-primary" />
                         AI Neural Matching Engine
                       </h3>
 
@@ -627,7 +627,7 @@ export default function SettingsPage() {
                               <span className="text-sm font-semibold text-white block">Face Matching Confidence Cutoff</span>
                               <span className="text-xs text-zinc-400 mt-0.5 block">Determine how strictly face geometry must align to trigger match confirmations.</span>
                             </div>
-                            <div className="px-3 py-1 rounded-lg bg-violet-500/10 border border-violet-500/30 text-xs font-mono font-bold text-violet-300 shadow-sm shadow-violet-950/20">
+                            <div className="px-3 py-1 rounded-lg bg-primary/10 border border-primary/20 text-xs font-mono font-bold text-primary shadow-sm">
                               {(faceSensitivity * 100).toFixed(0)}% strictness
                             </div>
                           </div>
@@ -640,11 +640,11 @@ export default function SettingsPage() {
                               step="0.01"
                               value={faceSensitivity}
                               onChange={e => setFaceSensitivity(parseFloat(e.target.value))}
-                              className="w-full h-1.5 bg-neutral-900 border border-white/5 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                              className="w-full h-1.5 bg-neutral-900 border border-white/5 rounded-lg appearance-none cursor-pointer accent-primary"
                             />
                             <div className="flex justify-between text-[10px] font-bold text-zinc-500 uppercase tracking-wide">
                               <span>Broad Recall (Low)</span>
-                              <span className="text-cyan-400">Optimal Target (0.88)</span>
+                              <span className="text-primary">Optimal Target (0.88)</span>
                               <span>Ultra strict (High)</span>
                             </div>
                           </div>
@@ -673,8 +673,8 @@ export default function SettingsPage() {
                                 </>
                               ) : (
                                 <>
-                                  <RefreshCw className="w-3.5 h-3.5 text-cyan-400 animate-spin" />
-                                  <span className="text-xs font-bold text-cyan-400 uppercase tracking-wider">Indexing Catalog...</span>
+                                  <RefreshCw className="w-3.5 h-3.5 text-primary animate-spin" />
+                                  <span className="text-xs font-bold text-primary uppercase tracking-wider">Indexing Catalog...</span>
                                 </>
                               )}
                             </div>
@@ -696,7 +696,7 @@ export default function SettingsPage() {
                         </div>
 
                         {/* AI Reprocessing Button Trigger */}
-                        <div className="p-4 bg-violet-600/5 border border-violet-500/10 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                        <div className="p-4 bg-primary/[0.02] border border-primary/10 rounded-2xl flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
                           <div>
                             <span className="text-sm font-semibold text-white block">Biometric Index Rebuild</span>
                             <span className="text-xs text-zinc-400 block mt-0.5">Need to rebuild face indexes for existing photos with modified sensitivity settings?</span>
@@ -705,7 +705,7 @@ export default function SettingsPage() {
                             onClick={handleReprocessPhotos}
                             disabled={reprocessing}
                             variant="outline" 
-                            className="h-10 text-xs font-bold border-violet-500/20 text-violet-300 hover:bg-violet-500/10 shrink-0 flex items-center gap-1.5"
+                            className="h-10 text-xs font-bold border-primary/20 text-primary hover:bg-primary/10 shrink-0 flex items-center gap-1.5"
                           >
                             <RefreshCw className={`w-3.5 h-3.5 ${reprocessing ? "animate-spin" : ""}`} />
                             {reprocessing ? "Re-Indexing Catalog..." : "Reprocess Event Photos"}
@@ -720,7 +720,7 @@ export default function SettingsPage() {
                           variant="premium" 
                           onClick={handleSaveAI} 
                           disabled={saving}
-                          className="h-10 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white flex items-center gap-2"
+                          className="h-10 text-xs font-bold flex items-center gap-2"
                         >
                           {saving ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                           Save AI Config
@@ -733,9 +733,9 @@ export default function SettingsPage() {
                 {/* 5. NOTIFICATION SETTINGS */}
                 {activeTab === "notifications" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <Bell className="w-5 h-5 text-violet-400" />
+                        <Bell className="w-5 h-5 text-primary" />
                         Multi-Channel Notifications
                       </h3>
 
@@ -785,7 +785,7 @@ export default function SettingsPage() {
                           variant="premium" 
                           onClick={handleSaveNotifications} 
                           disabled={saving}
-                          className="h-10 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white flex items-center gap-2"
+                          className="h-10 text-xs font-bold flex items-center gap-2"
                         >
                           {saving ? <RefreshCw className="w-3.5 h-3.5 animate-spin" /> : <Save className="w-3.5 h-3.5" />}
                           Save Notifications
@@ -802,7 +802,7 @@ export default function SettingsPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       
                       {/* Storage Quota */}
-                      <div className="glass-dark border border-white/5 p-6 rounded-2xl space-y-4">
+                      <div className="glass-luxury p-6 rounded-2xl space-y-4 bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                         <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block">Workspace Media Storage</span>
                         <div className="flex items-end justify-between">
                           <p className="text-xl font-bold text-white font-mono">
@@ -812,12 +812,12 @@ export default function SettingsPage() {
                         </div>
                         {/* Progress bar */}
                         <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden border border-white/5">
-                          <div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-500" style={{ width: "42.1%" }} />
+                          <div className="h-full rounded-full bg-gradient-to-r from-[#E5C158] to-[#A38A4D]" style={{ width: "42.1%" }} />
                         </div>
                       </div>
 
                       {/* AI Scan Quota */}
-                      <div className="glass-dark border border-white/5 p-6 rounded-2xl space-y-4">
+                      <div className="glass-luxury p-6 rounded-2xl space-y-4 bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                         <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest block">AI Matching Scans</span>
                         <div className="flex items-end justify-between">
                           <p className="text-xl font-bold text-white font-mono">
@@ -827,19 +827,19 @@ export default function SettingsPage() {
                         </div>
                         {/* Progress bar */}
                         <div className="w-full h-2 bg-neutral-900 rounded-full overflow-hidden border border-white/5">
-                          <div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-cyan-500" style={{ width: "42.5%" }} />
+                          <div className="h-full rounded-full bg-gradient-to-r from-[#E5C158] to-[#A38A4D]" style={{ width: "42.5%" }} />
                         </div>
                       </div>
                     </div>
 
                     {/* Subscription Comparison plans */}
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl space-y-6">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl space-y-6 bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <div>
                         <h3 className="text-lg font-bold text-white flex items-center gap-2">
-                          <CreditCard className="w-5 h-5 text-violet-400" />
+                          <CreditCard className="w-5 h-5 text-primary" />
                           Compare Studio Plans
                         </h3>
-                        <p className="text-xs text-zinc-400 mt-0.5">Your studio is currently subscribed to the <strong className="text-violet-400">Pro Plan</strong>.</p>
+                        <p className="text-xs text-zinc-400 mt-0.5">Your studio is currently subscribed to the <strong className="text-primary">Pro Plan</strong>.</p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-white/5">
@@ -853,8 +853,8 @@ export default function SettingsPage() {
                             <p className="text-2xl font-black font-mono text-white mt-4">$0 <span className="text-[10px] text-zinc-500 uppercase font-sans font-normal">Forever</span></p>
                             
                             <ul className="text-[10px] text-zinc-400 space-y-2.5 pt-6 border-t border-white/5 mt-6">
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> 10GB Active Storage</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> 500 AI Matches / Month</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> 10GB Active Storage</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> 500 AI Matches / Month</li>
                               <li className="flex items-center gap-2 text-zinc-600"><X className="w-3.5 h-3.5 shrink-0" /> Anti-theft Watermarking</li>
                               <li className="flex items-center gap-2 text-zinc-600"><X className="w-3.5 h-3.5 shrink-0" /> White label domain hosting</li>
                             </ul>
@@ -863,22 +863,22 @@ export default function SettingsPage() {
                         </div>
 
                         {/* Pro plan */}
-                        <div className="p-6 rounded-2xl bg-gradient-to-b from-violet-950/20 to-neutral-950 border border-violet-500/30 flex flex-col justify-between space-y-6 relative shadow-lg shadow-violet-950/15">
-                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded bg-violet-600 text-[8px] font-black text-white uppercase tracking-widest">Active Choice</div>
+                        <div className="p-6 rounded-2xl bg-gradient-to-b from-primary/[0.02] to-neutral-950 border border-primary/20 flex flex-col justify-between space-y-6 relative shadow-lg shadow-primary/5">
+                          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded bg-[#E5C158] text-[8px] font-black text-black uppercase tracking-widest">Active Choice</div>
                           <div>
-                            <span className="text-xs font-bold text-violet-400 uppercase tracking-widest block mb-1">Professional Tier</span>
+                            <span className="text-xs font-bold text-primary uppercase tracking-widest block mb-1">Professional Tier</span>
                             <h4 className="text-xl font-extrabold text-white">Pro Plan</h4>
                             <p className="text-[10px] text-zinc-400 mt-2 block">For luxury event photographers, agency teams, and professional studios.</p>
                             <p className="text-2xl font-black font-mono text-white mt-4">$79 <span className="text-[10px] text-zinc-500 uppercase font-sans font-normal">/ Month</span></p>
                             
                             <ul className="text-[10px] text-zinc-300 space-y-2.5 pt-6 border-t border-white/5 mt-6">
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-violet-400 shrink-0" /> 2TB Storage Space</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-violet-400 shrink-0" /> 100,000 AI Matches</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-violet-400 shrink-0" /> Anti-theft Watermarking</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-violet-400 shrink-0" /> Custom Domain Integration</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> 2TB Storage Space</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> 100,000 AI Matches</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> Anti-theft Watermarking</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> Custom Domain Integration</li>
                             </ul>
                           </div>
-                          <Button disabled variant="premium" className="w-full h-9 text-xs font-bold border-none bg-gradient-to-r from-violet-600 to-cyan-500 text-white shadow-md">Active Plan</Button>
+                          <Button disabled variant="premium" className="w-full h-9 text-xs font-bold text-white shadow-md">Active Plan</Button>
                         </div>
 
                         {/* Enterprise plan */}
@@ -890,10 +890,10 @@ export default function SettingsPage() {
                             <p className="text-2xl font-black font-mono text-white mt-4">Custom <span className="text-[10px] text-zinc-500 uppercase font-sans font-normal">Pricing</span></p>
                             
                             <ul className="text-[10px] text-zinc-400 space-y-2.5 pt-6 border-t border-white/5 mt-6">
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Unlimited Dedicated Storage</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Custom Neural Models (Private Servers)</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> Dedicated Account Manager</li>
-                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-cyan-400 shrink-0" /> SLA Security Audits</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> Unlimited Dedicated Storage</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> Custom Neural Models (Private Servers)</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> Dedicated Account Manager</li>
+                              <li className="flex items-center gap-2"><Check className="w-3.5 h-3.5 text-primary shrink-0" /> SLA Security Audits</li>
                             </ul>
                           </div>
                           <Button variant="outline" className="w-full h-9 text-xs border-white/10 hover:bg-white/5 text-white font-bold">Contact Sales</Button>
@@ -927,7 +927,7 @@ export default function SettingsPage() {
                                     </span>
                                   </td>
                                   <td className="p-3.5 text-right">
-                                    <button className="text-[10px] font-bold text-violet-400 hover:text-violet-300 underline bg-transparent border-none cursor-pointer">
+                                    <button className="text-[10px] font-bold text-primary hover:text-primary/80 underline bg-transparent border-none cursor-pointer">
                                       Download PDF
                                     </button>
                                   </td>
@@ -944,9 +944,9 @@ export default function SettingsPage() {
                 {/* 7. SECURITY & PRIVACY */}
                 {activeTab === "security" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <Shield className="w-5 h-5 text-violet-400" />
+                        <Shield className="w-5 h-5 text-primary" />
                         Security & Biometric Compliance
                       </h3>
 
@@ -1030,9 +1030,9 @@ export default function SettingsPage() {
                 {/* 8. TEAM MANAGEMENT */}
                 {activeTab === "team" && (
                   <div className="space-y-6">
-                    <div className="glass-dark border border-white/5 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div className="glass-luxury p-6 md:p-8 rounded-2xl relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] shadow-xl backdrop-blur-3xl">
                       <h3 className="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <Users className="w-5 h-5 text-violet-400" />
+                        <Users className="w-5 h-5 text-primary" />
                         Studio Team Members
                       </h3>
 
@@ -1047,13 +1047,13 @@ export default function SettingsPage() {
                               value={inviteEmail}
                               onChange={e => setInviteEmail(e.target.value)}
                               placeholder="colleague@yourstudio.com"
-                              className="flex-1 h-10 bg-white/5 border border-white/10 rounded-xl px-4 text-xs font-semibold text-white focus:outline-none focus:border-violet-500/50"
+                              className="flex-1 h-10 bg-zinc-950/60 border border-white/5 rounded-xl px-4 text-xs text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all"
                             />
                             
                             <select
                               value={inviteRole}
                               onChange={e => setInviteRole(e.target.value as "Admin" | "Staff" | "Viewer")}
-                              className="h-10 rounded-xl border border-white/10 bg-[#121215] px-3 text-xs font-semibold text-white focus:outline-none"
+                              className="h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 text-xs text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all"
                             >
                               <option value="Admin">Admin</option>
                               <option value="Staff">Staff</option>
@@ -1063,7 +1063,8 @@ export default function SettingsPage() {
                             <Button 
                               type="submit" 
                               disabled={saving}
-                              className="h-10 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white flex items-center gap-1.5 shrink-0"
+                              variant="premium"
+                              className="h-10 text-xs font-bold text-white flex items-center gap-1.5 shrink-0"
                             >
                               <Plus className="w-3.5 h-3.5" />
                               Send Workspace Invite
@@ -1113,7 +1114,7 @@ export default function SettingsPage() {
                                     <td className="p-3.5 text-right space-x-3">
                                       <button 
                                         onClick={() => openEditModal(member)}
-                                        className="text-[10px] font-bold text-violet-400 hover:text-violet-300 underline bg-transparent border-none cursor-pointer"
+                                        className="text-[10px] font-bold text-primary hover:text-primary/80 underline bg-transparent border-none cursor-pointer"
                                       >
                                         Edit
                                       </button>
@@ -1151,7 +1152,7 @@ export default function SettingsPage() {
                 initial={{ opacity: 0, scale: 0.95, y: 15 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
-                className="glass-dark border border-white/10 rounded-2xl p-6 w-full max-w-[400px] text-left space-y-4 shadow-[0_0_60px_rgba(0,0,0,0.85)] relative"
+                className="glass-luxury border border-white/[0.06] rounded-2xl p-6 w-full max-w-[400px] text-left space-y-4 shadow-[0_0_60px_rgba(0,0,0,0.85)] relative bg-neutral-950/45 backdrop-blur-3xl"
               >
                 {/* Close Button */}
                 <button 
@@ -1177,7 +1178,7 @@ export default function SettingsPage() {
                     <select
                       value={editingMember.role}
                       onChange={e => setEditingMember(prev => prev ? { ...prev, role: e.target.value as "Admin" | "Staff" | "Viewer" } : null)}
-                      className="w-full h-10 rounded-xl border border-white/10 bg-[#121215] px-3 text-xs font-semibold text-white focus:outline-none"
+                      className="w-full h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 text-xs text-white focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/45 transition-all"
                     >
                       <option value="Admin">Admin (Full Access & Billing)</option>
                       <option value="Staff">Staff (Upload catalogs & neural indexing)</option>
@@ -1198,7 +1199,7 @@ export default function SettingsPage() {
                     variant="premium"
                     onClick={saveMemberRole}
                     disabled={saving}
-                    className="h-9 text-xs font-bold bg-gradient-to-r from-violet-600 to-cyan-500 text-white border-none"
+                    className="h-9 text-xs font-bold text-white border-none"
                   >
                     {saving ? "Saving Changes..." : "Save Modifications"}
                   </Button>

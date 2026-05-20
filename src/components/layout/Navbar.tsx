@@ -14,16 +14,16 @@ export function Navbar() {
       </div>
 
       <div className="flex items-center gap-4 ml-auto">
-        <Button variant="ghost" size="icon" className="relative">
-          <Bell className="w-5 h-5 text-muted-foreground" />
-          <span className="absolute top-2 right-2 w-2 h-2 bg-blue-500 rounded-full" />
+        <Button variant="ghost" size="icon" className="relative hover:text-primary">
+          <Bell className="w-4.5 h-4.5 text-muted-foreground transition-colors hover:text-white" />
+          <span className="absolute top-2.5 right-2.5 w-1.5 h-1.5 bg-primary rounded-full shadow-[0_0_8px_rgba(229,193,88,0.6)]" />
         </Button>
         <div className="flex items-center gap-3 pl-4 border-l border-white/10">
           <div className="text-right hidden sm:block">
-            <p className="text-sm font-medium text-white">Studio Admin</p>
-            <p className="text-xs text-muted-foreground">Pro Plan</p>
+            <p className="text-sm font-semibold text-white tracking-wide">Studio Admin</p>
+            <p className="text-[10px] uppercase font-bold text-primary tracking-widest">Pro Plan</p>
           </div>
-          <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-sm shadow-inner border border-white/20">
+          <div className="w-8.5 h-8.5 rounded-full bg-gradient-to-tr from-[#E5C158] to-[#A38A4D] flex items-center justify-center font-bold text-xs text-[#060608] shadow-lg border border-white/20 transition-transform hover:scale-105 duration-300">
             SA
           </div>
         </div>

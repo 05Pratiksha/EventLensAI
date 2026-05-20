@@ -8,9 +8,9 @@ interface ActivityTimelineProps {
 export function ActivityTimeline({ activities }: ActivityTimelineProps) {
   const getIcon = (type: Activity['type']) => {
     switch (type) {
-      case 'upload': return <Upload className="w-4 h-4 text-blue-500" />;
+      case 'upload': return <Upload className="w-4 h-4 text-[#E5C158]" />;
       case 'match': return <Sparkles className="w-4 h-4 text-emerald-500" />;
-      case 'publish': return <Send className="w-4 h-4 text-purple-500" />;
+      case 'publish': return <Send className="w-4 h-4 text-[#A38A4D]" />;
       case 'download': return <Download className="w-4 h-4 text-amber-500" />;
     }
   };

@@ -27,29 +27,29 @@ const features = [
     title: "AI Face Matching",
     description: "Guests find their photos in seconds just by uploading a selfie. Instant recognition, zero manual indexing.",
     icon: Sparkles,
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
+    color: "text-[#E5C158]",
+    bg: "bg-[#E5C158]/10",
   },
   {
     title: "QR Event Access",
     description: "Generates custom QR codes for easy physical printouts. Seamless access for guests on their mobile devices.",
     icon: QrCode,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
+    color: "text-[#F7E7CE]",
+    bg: "bg-[#F7E7CE]/10",
   },
   {
     title: "Smart Gallery",
     description: "Premium, dark, immersive media grids customized with automated sorting and facial detection tags.",
     icon: ImageIcon,
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
+    color: "text-zinc-300",
+    bg: "bg-zinc-300/10",
   },
   {
     title: "Secure Downloads",
     description: "Dynamic watermarking, customizable delivery limits, and military-grade encryption.",
     icon: ShieldCheck,
-    color: "text-amber-400",
-    bg: "bg-amber-500/10",
+    color: "text-[#A38A4D]",
+    bg: "bg-[#A38A4D]/10",
   },
 ];
 
@@ -59,25 +59,25 @@ const steps = [
     title: "Upload Event Photos",
     description: "Photographers drop raw catalogs into their private dashboard workspace.",
     icon: UploadCloud,
-    color: "border-violet-500/30 text-violet-400"
+    color: "border-[#E5C158]/20 text-[#E5C158]"
   },
   {
     title: "AI Scans & Indexes",
     description: "Neural face engines extract templates and index identities securely.",
     icon: Search,
-    color: "border-cyan-500/30 text-cyan-400"
+    color: "border-[#F7E7CE]/20 text-[#F7E7CE]"
   },
   {
     title: "Guest Uploads Selfie",
     description: "Visitors scan a card QR and snap a picture of their face.",
     icon: Camera,
-    color: "border-emerald-500/30 text-emerald-400"
+    color: "border-zinc-500/20 text-zinc-300"
   },
   {
     title: "Instant Secure Delivery",
     description: "Private matching gallery is generated immediately for safe downloads.",
     icon: FileCheck,
-    color: "border-amber-500/30 text-amber-400"
+    color: "border-[#A38A4D]/20 text-[#A38A4D]"
   },
 ];
 
@@ -141,25 +141,25 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A0A0B] text-foreground selection:bg-violet-500/30 overflow-x-hidden font-sans">
+    <div className="min-h-screen bg-background text-foreground selection:bg-primary/25 overflow-x-hidden font-sans">
       
       {/* 1. Premium Navbar */}
-      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-[#0A0A0B]/80 backdrop-blur-md">
+      <nav className="fixed top-0 w-full z-50 border-b border-white/5 bg-background/80 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div 
             className="flex items-center gap-2 cursor-pointer" 
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-violet-600 to-cyan-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
-              <Camera className="w-5 h-5 text-white" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#E5C158] to-[#A38A4D] flex items-center justify-center shadow-lg shadow-primary/10">
+              <Camera className="w-4.5 h-4.5 text-[#060608]" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-white">EventLens <span className="text-violet-400">AI</span></span>
+            <span className="font-bold text-xl tracking-tight text-white">EventLens <span className="text-primary font-medium">AI</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-            <button onClick={() => scrollTo("features")} className="hover:text-white transition-colors">Features</button>
-            <button onClick={() => scrollTo("how-it-works")} className="hover:text-white transition-colors">How It Works</button>
-            <button onClick={() => scrollTo("demo")} className="hover:text-white transition-colors">Demo</button>
+            <button onClick={() => scrollTo("features")} className="hover:text-white transition-colors cursor-pointer">Features</button>
+            <button onClick={() => scrollTo("how-it-works")} className="hover:text-white transition-colors cursor-pointer">How It Works</button>
+            <button onClick={() => scrollTo("demo")} className="hover:text-white transition-colors cursor-pointer">Demo</button>
           </div>
 
           <div className="flex items-center gap-3">
@@ -176,7 +176,7 @@ export default function Home() {
             <Button 
               variant="premium" 
               onClick={() => scrollTo("demo")}
-              className="bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-medium shadow-lg shadow-violet-500/10 hover:shadow-violet-500/20 transition-all border-none h-9 px-4 text-xs"
+              className="h-9 px-4 text-xs"
             >
               Start Demo
             </Button>
@@ -187,9 +187,9 @@ export default function Home() {
       {/* 2. Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden min-h-screen flex items-center">
         {/* Dynamic mesh gradients */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.06)_0%,transparent_50%)] opacity-70 pointer-events-none" />
-        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-violet-600/10 blur-[130px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: "12s" }} />
-        <div className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[50%] bg-cyan-600/10 blur-[130px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: "16s" }} />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[1000px] bg-[radial-gradient(circle_at_center,rgba(229,193,88,0.03)_0%,transparent_50%)] opacity-70 pointer-events-none" />
+        <div className="absolute -top-[10%] -right-[10%] w-[50%] h-[50%] bg-[#E5C158]/5 blur-[130px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: "12s" }} />
+        <div className="absolute -bottom-[10%] -left-[10%] w-[50%] h-[50%] bg-[#A38A4D]/5 blur-[130px] rounded-full pointer-events-none animate-pulse" style={{ animationDuration: "16s" }} />
 
         <div className="max-w-7xl mx-auto px-6 relative w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -200,17 +200,17 @@ export default function Home() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="glass-dark border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(139,92,246,0.02)] relative overflow-hidden"
+                className="glass-luxury border border-white/[0.04] rounded-3xl p-8 md:p-12 shadow-[0_0_50px_rgba(229,193,88,0.01)] relative overflow-hidden"
               >
-                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-cyan-500" />
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E5C158] to-[#A38A4D]" />
                 
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-xs font-bold uppercase tracking-widest mb-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
                   <Zap className="w-3 h-3 animate-pulse" />
                   Premium AI facial delivery
                 </div>
                 
                 <h1 className="text-4xl md:text-[54px] font-extrabold tracking-tight text-white leading-[1.08] mb-6">
-                  Find every event photo with <span className="text-gradient bg-gradient-to-r from-violet-400 via-purple-400 to-cyan-400">one selfie</span>
+                  Find every event photo with <span className="text-gradient-luxury">one selfie</span>
                 </h1>
                 
                 <p className="text-lg text-zinc-400 leading-relaxed mb-8 max-w-xl">
@@ -219,18 +219,19 @@ export default function Home() {
 
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button 
+                    variant="premium"
                     size="lg" 
                     onClick={() => scrollTo("demo")}
-                    className="w-full sm:w-auto h-12 px-8 text-sm bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-medium hover:opacity-95 shadow-lg shadow-violet-500/20 transition-all border-none"
+                    className="w-full sm:w-auto h-12 px-8 text-sm"
                   >
                     Start Demo
-                    <ArrowRight className="ml-2 w-4 h-4" />
+                    <ArrowRight className="ml-2 w-4 h-4 text-[#060608]" />
                   </Button>
                   <Button 
                     size="lg" 
-                    variant="glass" 
+                    variant="outline" 
                     onClick={() => scrollTo("demo")}
-                    className="w-full sm:w-auto h-12 px-8 text-sm border-white/15 text-white hover:bg-white/5"
+                    className="w-full sm:w-auto h-12 px-8 text-sm border-white/10 hover:bg-white/5 text-white"
                   >
                     View Guest Flow
                   </Button>
@@ -292,7 +293,7 @@ export default function Home() {
           
           <div className="relative">
             {/* Visual connector bar connecting steppers */}
-            <div className="hidden lg:block absolute top-[44px] left-[12%] w-[76%] h-[2px] bg-gradient-to-r from-violet-500/20 via-cyan-500/20 to-violet-500/20" />
+            <div className="hidden lg:block absolute top-[44px] left-[12%] w-[76%] h-[2px] bg-gradient-to-r from-[#E5C158]/5 via-[#E5C158]/20 to-[#E5C158]/5" />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
               {steps.map((step, i) => (
@@ -304,7 +305,7 @@ export default function Home() {
                   transition={{ delay: i * 0.1 }}
                   className="relative text-center group"
                 >
-                  <div className={cn("w-20 h-20 rounded-2xl bg-[#0A0A0B] border flex items-center justify-center mx-auto mb-6 relative z-10 transition-all duration-300 group-hover:scale-105 shadow-[0_0_30px_rgba(139,92,246,0.02)]", step.color)}>
+                  <div className={cn("w-20 h-20 rounded-2xl bg-[#060608] border flex items-center justify-center mx-auto mb-6 relative z-10 transition-all duration-300 group-hover:scale-105 shadow-[0_0_30px_rgba(229,193,88,0.01)]", step.color)}>
                     <step.icon className="w-8 h-8" />
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-white">{step.title}</h3>
@@ -318,7 +319,7 @@ export default function Home() {
 
       {/* 6. Demo Preview Section */}
       <section id="demo" className="py-32 border-t border-white/5 bg-background relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.02)_0%,transparent_40%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(229,193,88,0.01)_0%,transparent_40%)] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center max-w-2xl mx-auto mb-20">
@@ -328,7 +329,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left: Input selfie selection card */}
-            <div className="lg:col-span-4 flex flex-col justify-between p-8 rounded-3xl glass-dark border border-white/5 relative overflow-hidden">
+            <div className="lg:col-span-4 flex flex-col justify-between p-8 rounded-3xl glass-luxury border border-white/[0.04] relative overflow-hidden">
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">Step 1: Choose a Selfie</h3>
                 <p className="text-sm text-zinc-400 mb-8">Simulate a guest uploading their face to search database.</p>
@@ -340,10 +341,10 @@ export default function Home() {
                       onClick={() => handleSelfieSelect(selfie)}
                       disabled={isDemoScanning}
                       className={cn(
-                        "w-full flex items-center gap-4 p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden",
+                        "w-full flex items-center gap-4 p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden cursor-pointer",
                         selectedSelfie.id === selfie.id 
-                          ? "border-violet-500/50 bg-violet-500/5 shadow-[0_0_20px_rgba(139,92,246,0.05)]" 
-                          : "border-white/5 bg-white/5 hover:border-white/15"
+                          ? "border-primary/45 bg-primary/[0.03] shadow-[0_0_20px_rgba(229,193,88,0.03)]" 
+                          : "border-white/5 bg-white/[0.02] hover:border-white/15"
                       )}
                     >
                       <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 shrink-0">
@@ -354,8 +355,8 @@ export default function Home() {
                         <p className="text-xs text-zinc-400">Click to scan catalog</p>
                       </div>
                       {selectedSelfie.id === selfie.id && (
-                        <div className="w-6 h-6 rounded-full bg-violet-600 flex items-center justify-center">
-                          <Check className="w-3.5 h-3.5 text-white" />
+                        <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center">
+                          <Check className="w-3.5 h-3.5 text-[#060608]" />
                         </div>
                       )}
                     </button>
@@ -370,7 +371,7 @@ export default function Home() {
             </div>
 
             {/* Right: AI Output simulation workspace */}
-            <div className="lg:col-span-8 flex flex-col justify-center min-h-[400px] p-8 rounded-3xl glass-dark border border-white/5 relative overflow-hidden">
+            <div className="lg:col-span-8 flex flex-col justify-center min-h-[400px] p-8 rounded-3xl glass-luxury border border-white/[0.04] relative overflow-hidden">
               <AnimatePresence mode="wait">
                 {isDemoScanning ? (
                   <motion.div
@@ -381,10 +382,10 @@ export default function Home() {
                     className="flex flex-col items-center justify-center h-full text-center space-y-6"
                   >
                     <div className="relative">
-                      <div className="w-24 h-24 rounded-full border-4 border-violet-500/20 flex items-center justify-center">
-                        <div className="w-20 h-20 rounded-full border-4 border-t-violet-500 border-r-transparent border-b-cyan-500 border-l-transparent animate-spin" />
+                      <div className="w-24 h-24 rounded-full border-4 border-primary/10 flex items-center justify-center">
+                        <div className="w-20 h-20 rounded-full border-4 border-t-primary border-r-transparent border-b-primary/40 border-l-transparent animate-spin" />
                       </div>
-                      <div className="absolute inset-0 bg-violet-500/10 blur-xl rounded-full" />
+                      <div className="absolute inset-0 bg-primary/5 blur-xl rounded-full" />
                     </div>
                     
                     <div>
@@ -416,10 +417,10 @@ export default function Home() {
                         {selectedSelfie.matches.map((photo, i) => (
                           <div 
                             key={i} 
-                            className="relative rounded-2xl border border-white/5 overflow-hidden group aspect-[3/4] bg-neutral-900 shadow-lg"
+                            className="relative rounded-2xl border border-white/5 overflow-hidden group aspect-[3/4] bg-neutral-950 shadow-lg"
                           >
                             <img src={photo.url} alt={`Match ${i + 1}`} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                            <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md border border-violet-500/30 text-[10px] font-bold text-violet-300 uppercase tracking-wide">
+                            <div className="absolute top-3 left-3 px-2 py-0.5 rounded bg-black/60 backdrop-blur-md border border-primary/30 text-[10px] font-bold text-primary uppercase tracking-wide">
                               {photo.match} Match
                             </div>
                             <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -433,7 +434,7 @@ export default function Home() {
                     </div>
 
                     <div className="mt-8 flex justify-end">
-                      <Button variant="premium" className="bg-gradient-to-r from-violet-600 to-cyan-500 border-none text-white text-sm">
+                      <Button variant="premium" className="h-10 text-xs px-6">
                         Download Entire Gallery
                       </Button>
                     </div>
@@ -447,7 +448,7 @@ export default function Home() {
 
       {/* 8. Final CTA Section */}
       <section className="py-32 relative overflow-hidden border-t border-white/5">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-violet-600/10 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary/5 blur-[130px] rounded-full pointer-events-none" />
         
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight tracking-tight">
@@ -460,10 +461,10 @@ export default function Home() {
             size="lg" 
             variant="premium" 
             onClick={() => scrollTo("demo")}
-            className="h-13 px-10 text-sm bg-gradient-to-r from-violet-600 to-cyan-500 text-white font-semibold border-none shadow-lg shadow-violet-500/20 hover:opacity-95 transition-all"
+            className="h-12 px-8 text-sm"
           >
             Start Demo
-            <ArrowRight className="ml-2 w-4 h-4" />
+            <ArrowRight className="ml-2 w-4 h-4 text-[#060608]" />
           </Button>
         </div>
       </section>
@@ -474,10 +475,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
               <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-md bg-gradient-to-tr from-violet-600 to-cyan-500 flex items-center justify-center">
-                  <Camera className="w-4 h-4 text-white" />
+                <div className="w-7 h-7 rounded-md bg-gradient-to-tr from-[#E5C158] to-[#A38A4D] flex items-center justify-center">
+                  <Camera className="w-3.5 h-3.5 text-[#060608]" />
                 </div>
-                <span className="font-bold tracking-tight text-white">EventLens AI</span>
+                <span className="font-bold tracking-tight text-white">EventLens <span className="text-primary font-medium">AI</span></span>
               </div>
               <p className="text-xs text-zinc-500 leading-relaxed max-w-xs">
                 Premium AI-powered event photo delivery, letting guests instantly discover their high-res portraits using one selfie.

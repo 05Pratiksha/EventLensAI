@@ -55,7 +55,7 @@ export default function EventDetailsPage() {
         <div className="flex-1">
           <div className="flex items-center gap-3">
             <h1 className="text-3xl font-bold tracking-tight text-white">{event.title}</h1>
-            <Badge variant="outline" className="border-blue-500/30 text-blue-400 bg-blue-500/10">
+            <Badge variant="outline" className="border-primary/20 text-primary bg-primary/[0.04] text-[10px] uppercase font-bold tracking-widest px-2 py-0.5">
               {event.type}
             </Badge>
           </div>
@@ -75,20 +75,20 @@ export default function EventDetailsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           {/* Banner */}
-          <div className="relative h-64 rounded-2xl overflow-hidden border border-white/10 group">
-            <div className="absolute inset-0 bg-black/40 z-10 transition-opacity group-hover:opacity-60" />
+          <div className="relative h-64 rounded-2xl overflow-hidden border border-white/[0.04] group shadow-lg">
+            <div className="absolute inset-0 bg-black/45 z-10 transition-opacity group-hover:opacity-60" />
             <img src={event.coverImage} alt="Cover" className="w-full h-full object-cover" />
-            <Button variant="glass" className="absolute top-4 right-4 z-20">
-              <ImagePlus className="w-4 h-4 mr-2" />
+            <Button variant="glass" className="absolute top-4 right-4 z-20 text-xs">
+              <ImagePlus className="w-3.5 h-3.5 mr-2" />
               Change Cover
             </Button>
           </div>
 
           {/* Quick Upload */}
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <div className="bg-neutral-950/45 border border-white/[0.04] rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold flex items-center gap-2">
-                <Upload className="w-5 h-5 text-blue-500" />
+                <Upload className="w-4.5 h-4.5 text-primary" />
                 Add Photos
               </h3>
               <AIStatusBadge status="complete" matches={event.matchedCount} />
@@ -109,7 +109,7 @@ export default function EventDetailsPage() {
         <div className="space-y-6">
           <QRCard url={guestUrl} eventName={event.title} />
           
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <div className="bg-neutral-950/45 border border-white/[0.04] rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
             <h3 className="font-semibold mb-4">Event Settings</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">

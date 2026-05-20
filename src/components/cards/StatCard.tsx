@@ -11,12 +11,12 @@ export function StatCard({ stat }: StatCardProps) {
   const isUp = stat.trend === 'up';
 
   return (
-    <Card className="hover:border-blue-500/30 transition-colors group">
+    <Card className="hover:border-primary/20 transition-all duration-300 group">
       <CardContent className="p-6">
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-          <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-blue-500/10 transition-colors">
-            <Activity className="w-4 h-4 text-blue-500" />
+          <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+            <Activity className="w-4 h-4 text-primary" />
           </div>
         </div>
         <div className="flex items-baseline gap-2">

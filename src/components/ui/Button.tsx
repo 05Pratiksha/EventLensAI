@@ -10,12 +10,12 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-white/10 bg-transparent hover:bg-white/5",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-white/10 hover:text-accent-foreground",
+        outline: "border border-white/10 bg-transparent hover:bg-white/5 hover:border-primary/30 text-white transition-all",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-white/5",
+        ghost: "hover:bg-white/5 hover:text-primary transition-all",
         link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:from-blue-500 hover:to-indigo-500 border border-blue-500/30 shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:shadow-[0_0_30px_rgba(59,130,246,0.4)]",
-        glass: "bg-white/5 backdrop-blur-md border border-white/10 text-white hover:bg-white/10",
+        premium: "bg-gradient-to-r from-[#E5C158] via-[#F9F6F0] to-[#A38A4D] text-[#060608] hover:brightness-110 border border-[#E5C158]/30 shadow-[0_0_15px_rgba(229,193,88,0.15)] hover:shadow-[0_0_25px_rgba(229,193,88,0.3)] transition-all font-semibold active:scale-[0.98]",
+        glass: "bg-white/[0.03] backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-primary/20",
       },
       size: {
         default: "h-10 px-4 py-2",
