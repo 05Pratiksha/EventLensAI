@@ -9,12 +9,12 @@ interface QRCardProps {
 
 export function QRCard({ url, eventName }: QRCardProps) {
   return (
-    <Card className="overflow-hidden bg-gradient-to-b from-primary/[0.02] to-transparent border border-white/[0.04] shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)]">
+    <Card className="overflow-hidden bg-gradient-to-b from-primary/[0.02] to-transparent border border-border dark:border-white/[0.04] shadow-[0_20px_40px_-15px_rgba(163,138,77,0.06)] dark:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.6)]">
       <CardContent className="p-6 flex flex-col items-center text-center">
-        <h3 className="font-semibold mb-1 text-white tracking-wide">Guest Access</h3>
+        <h3 className="font-semibold mb-1 text-foreground tracking-wide">Guest Access</h3>
         <p className="text-xs text-muted-foreground mb-6">Scan to find photos for {eventName}</p>
         
-        <div className="bg-white p-4.5 rounded-2xl mb-6 shadow-xl shadow-primary/5 border border-[#E5C158]/20 transition-all hover:scale-102 duration-300">
+        <div className="bg-white p-4.5 rounded-2xl mb-6 shadow-xl shadow-primary/5 border border-primary/20 transition-all hover:scale-102 duration-300">
           {/* Mock QR Code using an image placeholder */}
           <img 
             src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(url)}`} 

@@ -16,15 +16,15 @@ const HeroCanvas = dynamic(
 // Fallback skeleton while R3F Canvas resolves/loads
 function HeroFallback() {
   return (
-    <div className="w-full h-full min-h-[450px] lg:min-h-[550px] flex items-center justify-center relative overflow-hidden bg-black/40 rounded-3xl border border-white/5 backdrop-blur-sm">
+    <div className="w-full h-full min-h-[450px] lg:min-h-[550px] flex items-center justify-center relative overflow-hidden bg-secondary/60 rounded-3xl border border-border backdrop-blur-sm">
       {/* Background radial gradient */}
       <div className="absolute inset-0 bg-gradient-to-tr from-violet-900/10 via-transparent to-cyan-900/10" />
 
       {/* Floating 2D representations in place of 3D scene */}
-      <div className="absolute top-[20%] left-[10%] w-24 h-32 rounded-lg border border-white/10 bg-white/5 rotate-[-12deg] flex items-center justify-center opacity-40 animate-pulse">
+      <div className="absolute top-[20%] left-[10%] w-24 h-32 rounded-lg border border-border bg-foreground/5 rotate-[-12deg] flex items-center justify-center opacity-40 animate-pulse">
         <Camera className="w-6 h-6 text-blue-400" />
       </div>
-      <div className="absolute bottom-[20%] right-[10%] w-24 h-32 rounded-lg border border-white/10 bg-white/5 rotate-[15deg] flex items-center justify-center opacity-40 animate-pulse">
+      <div className="absolute bottom-[20%] right-[10%] w-24 h-32 rounded-lg border border-border bg-foreground/5 rotate-[15deg] flex items-center justify-center opacity-40 animate-pulse">
         <QrCode className="w-6 h-6 text-purple-400" />
       </div>
 
@@ -44,7 +44,7 @@ function HeroFallback() {
             <Sparkles className="w-8 h-8 text-violet-400 animate-pulse" />
           </motion.div>
         </motion.div>
-        <span className="mt-4 text-xs tracking-wider text-zinc-500 font-mono uppercase animate-pulse">
+        <span className="mt-4 text-xs tracking-wider text-muted-foreground font-mono uppercase animate-pulse">
           Loading 3D Engine...
         </span>
       </div>

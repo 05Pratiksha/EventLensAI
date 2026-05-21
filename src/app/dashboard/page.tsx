@@ -67,7 +67,7 @@ export default function Dashboard() {
           <div className="flex items-center justify-between">
             <h3 className="text-xl font-bold">Recent Events</h3>
             <Link href="/events">
-              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-white">
+              <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-foreground">
                 View all
                 <ArrowRight className="w-4 h-4 ml-1" />
               </Button>
@@ -77,7 +77,7 @@ export default function Dashboard() {
           {isLoading ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[1, 2].map(i => (
-                <div key={i} className="h-80 rounded-xl bg-white/5 animate-pulse border border-white/10" />
+                <div key={i} className="h-80 rounded-xl bg-secondary/80 animate-pulse border border-border" />
               ))}
             </div>
           ) : (

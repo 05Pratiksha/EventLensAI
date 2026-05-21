@@ -16,14 +16,14 @@ export function ActivityTimeline({ activities }: ActivityTimelineProps) {
   };
 
   return (
-    <div className="relative border-l border-white/10 ml-3 space-y-6 pb-4">
+    <div className="relative border-l border-border ml-3 space-y-6 pb-4">
       {activities.map((activity) => (
         <div key={activity.id} className="relative pl-6">
-          <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-background border border-white/10 flex items-center justify-center">
+          <div className="absolute -left-[17px] top-1 w-8 h-8 rounded-full bg-background border border-border flex items-center justify-center">
             {getIcon(activity.type)}
           </div>
           <div>
-            <p className="text-sm font-medium text-white">{activity.title}</p>
+            <p className="text-sm font-medium text-foreground">{activity.title}</p>
             <p className="text-xs text-muted-foreground mt-1">{activity.timestamp}</p>
           </div>
         </div>

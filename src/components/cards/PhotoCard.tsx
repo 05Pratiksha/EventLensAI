@@ -17,7 +17,7 @@ export function PhotoCard({ photo, selectable, selected, onSelect, index = 0 }: 
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ delay: index * 0.05 }}
-      className="group relative aspect-square rounded-xl overflow-hidden bg-white/5 border border-white/10"
+      className="group relative aspect-square rounded-xl overflow-hidden bg-foreground/5 border border-border dark:bg-white/5 dark:border-white/10"
       onClick={() => selectable && onSelect && onSelect(photo.id)}
     >
       <img

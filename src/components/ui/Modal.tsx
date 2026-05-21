@@ -42,16 +42,16 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", bounce: 0, duration: 0.3 }}
-              className="w-full max-w-lg glass-dark rounded-2xl border border-white/10 shadow-2xl overflow-hidden pointer-events-auto"
+              className="w-full max-w-lg bg-background rounded-2xl border border-border shadow-2xl overflow-hidden pointer-events-auto"
             >
               {title && (
-                <div className="flex items-center justify-between p-4 border-b border-white/10">
-                  <h3 className="text-lg font-semibold">{title}</h3>
+                <div className="flex items-center justify-between p-4 border-b border-border">
+                  <h3 className="text-lg font-semibold text-foreground">{title}</h3>
                   <button
                     onClick={onClose}
-                    className="p-1 rounded-md hover:bg-white/10 transition-colors"
+                    className="p-1 rounded-md hover:bg-foreground/10 transition-colors"
                   >
-                    <X className="w-5 h-5 text-muted-foreground hover:text-white" />
+                    <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
                   </button>
                 </div>
               )}
@@ -59,9 +59,9 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
               {!title && (
                 <button
                   onClick={onClose}
-                  className="absolute top-4 right-4 p-1 rounded-md hover:bg-white/10 transition-colors z-10"
+                  className="absolute top-4 right-4 p-1 rounded-md hover:bg-foreground/10 transition-colors z-10"
                 >
-                  <X className="w-5 h-5 text-muted-foreground hover:text-white" />
+                  <X className="w-5 h-5 text-muted-foreground hover:text-foreground" />
                 </button>
               )}
 

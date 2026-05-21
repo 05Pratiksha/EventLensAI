@@ -42,21 +42,21 @@ export default function MediaUploadPage() {
         {/* Select Event (Mock dropdown for now) */}
         <Card>
           <CardContent className="p-6">
-            <label className="text-sm font-medium text-white block mb-2">Select Event to Upload To</label>
-            <select className="w-full max-w-md h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all">
-              <option className="bg-background">Global Tech Conference 2024</option>
-              <option className="bg-background">Sarah & James Wedding</option>
+            <label className="text-sm font-medium text-foreground block mb-2">Select Event to Upload To</label>
+            <select className="w-full max-w-md h-10 rounded-xl border border-border bg-secondary px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all">
+              <option className="bg-secondary text-foreground">Global Tech Conference 2024</option>
+              <option className="bg-secondary text-foreground">Sarah & James Wedding</option>
             </select>
           </CardContent>
         </Card>
 
         {/* Upload Area */}
-        <Card className="border-primary/10 shadow-[0_0_40px_rgba(229,193,88,0.04)] relative overflow-hidden bg-neutral-950/45 border border-white/[0.04] rounded-2xl shadow-xl backdrop-blur-3xl">
+        <Card className="border-primary/10 shadow-[0_0_40px_rgba(229,193,88,0.04)] relative overflow-hidden glass-luxury border rounded-2xl shadow-xl backdrop-blur-3xl">
           <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#E5C158] to-[#A38A4D]" />
           <CardContent className="p-8">
             <div className="flex items-center justify-between mb-6">
               <div>
-                <h3 className="text-xl font-bold mb-1 text-white">Drop files here</h3>
+                <h3 className="text-xl font-bold mb-1 text-foreground">Drop files here</h3>
                 <p className="text-muted-foreground text-sm">Our AI will automatically scan and match faces as you upload.</p>
               </div>
               <AIStatusBadge status={isUploading ? 'scanning' : 'idle'} />

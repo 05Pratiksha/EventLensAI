@@ -40,7 +40,7 @@ export default function EventDetailsPage() {
   }, [id]);
 
   if (isLoading) return <DashboardLayout><LoadingState message="Loading event workspace..." /></DashboardLayout>;
-  if (!event) return <DashboardLayout><div className="text-center py-20 text-white">Event not found</div></DashboardLayout>;
+  if (!event) return <DashboardLayout><div className="text-center py-20 text-foreground">Event not found</div></DashboardLayout>;
 
   const guestUrl = typeof window !== 'undefined' ? `${window.location.origin}/event/${event.slug}` : '';
 
@@ -54,7 +54,7 @@ export default function EventDetailsPage() {
         </Link>
         <div className="flex-1">
           <div className="flex items-center gap-3">
-            <h1 className="text-3xl font-bold tracking-tight text-white">{event.title}</h1>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground">{event.title}</h1>
             <Badge variant="outline" className="border-primary/20 text-primary bg-primary/[0.04] text-[10px] uppercase font-bold tracking-widest px-2 py-0.5">
               {event.type}
             </Badge>
@@ -75,7 +75,7 @@ export default function EventDetailsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 space-y-8">
           {/* Banner */}
-          <div className="relative h-64 rounded-2xl overflow-hidden border border-white/[0.04] group shadow-lg">
+          <div className="relative h-64 rounded-2xl overflow-hidden border border-border group shadow-lg">
             <div className="absolute inset-0 bg-black/45 z-10 transition-opacity group-hover:opacity-60" />
             <img src={event.coverImage} alt="Cover" className="w-full h-full object-cover" />
             <Button variant="glass" className="absolute top-4 right-4 z-20 text-xs">
@@ -85,7 +85,7 @@ export default function EventDetailsPage() {
           </div>
 
           {/* Quick Upload */}
-          <div className="bg-neutral-950/45 border border-white/[0.04] rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
+          <div className="bg-secondary/45 border border-border rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-lg font-semibold flex items-center gap-2">
                 <Upload className="w-4.5 h-4.5 text-primary" />
@@ -109,7 +109,7 @@ export default function EventDetailsPage() {
         <div className="space-y-6">
           <QRCard url={guestUrl} eventName={event.title} />
           
-          <div className="bg-neutral-950/45 border border-white/[0.04] rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
+          <div className="bg-secondary/45 border border-border rounded-2xl p-6 shadow-xl backdrop-blur-3xl">
             <h3 className="font-semibold mb-4">Event Settings</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
@@ -120,7 +120,7 @@ export default function EventDetailsPage() {
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm text-muted-foreground">Status</span>
-                <span className="text-sm font-medium text-white">{event.status}</span>
+                <span className="text-sm font-medium text-foreground">{event.status}</span>
               </div>
               <Button variant="outline" className="w-full mt-2">
                 <Settings className="w-4 h-4 mr-2" />

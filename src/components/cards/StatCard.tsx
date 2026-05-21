@@ -15,12 +15,12 @@ export function StatCard({ stat }: StatCardProps) {
       <CardContent className="p-6">
         <div className="flex items-center justify-between mb-4">
           <p className="text-sm font-medium text-muted-foreground">{stat.label}</p>
-          <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+          <div className="w-8 h-8 rounded-lg bg-foreground/5 dark:bg-white/5 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
             <Activity className="w-4 h-4 text-primary" />
           </div>
         </div>
         <div className="flex items-baseline gap-2">
-          <h4 className="text-3xl font-bold tracking-tight text-white">{stat.value}</h4>
+          <h4 className="text-3xl font-bold tracking-tight text-foreground">{stat.value}</h4>
         </div>
         <div className="flex items-center mt-2 text-xs">
           <span className={cn(

@@ -46,7 +46,7 @@ export default function CreateEventPage() {
   return (
     <DashboardLayout>
       <div className="max-w-4xl mx-auto">
-        <Link href="/events" className="inline-flex items-center text-sm text-muted-foreground hover:text-white mb-6">
+        <Link href="/events" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Back to Events
         </Link>
@@ -66,7 +66,7 @@ export default function CreateEventPage() {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm font-medium text-white">Event Title</label>
+                  <label className="text-sm font-medium text-foreground">Event Title</label>
                   <Input 
                     name="title"
                     placeholder="e.g. Sarah & James Wedding" 
@@ -77,23 +77,23 @@ export default function CreateEventPage() {
                 </div>
                 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-white">Event Type</label>
+                  <label className="text-sm font-medium text-foreground">Event Type</label>
                   <select 
                     name="type"
-                    className="w-full h-10 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all"
+                    className="w-full h-10 rounded-xl border border-border bg-secondary px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 transition-all"
                     value={formData.type}
                     onChange={handleChange}
                   >
-                    <option className="bg-background">Wedding</option>
-                    <option className="bg-background">Corporate</option>
-                    <option className="bg-background">Party</option>
-                    <option className="bg-background">Conference</option>
-                    <option className="bg-background">Other</option>
+                    <option className="bg-secondary text-foreground">Wedding</option>
+                    <option className="bg-secondary text-foreground">Corporate</option>
+                    <option className="bg-secondary text-foreground">Party</option>
+                    <option className="bg-secondary text-foreground">Conference</option>
+                    <option className="bg-secondary text-foreground">Other</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-white">Date</label>
+                  <label className="text-sm font-medium text-foreground">Date</label>
                   <Input 
                     name="date"
                     type="date" 
@@ -104,10 +104,10 @@ export default function CreateEventPage() {
                 </div>
 
                 <div className="space-y-2 md:col-span-2">
-                  <label className="text-sm font-medium text-white">Description (Optional)</label>
+                  <label className="text-sm font-medium text-foreground">Description (Optional)</label>
                   <textarea 
                     name="description"
-                    className="w-full h-24 rounded-xl border border-white/5 bg-zinc-950/60 px-4 py-2 text-sm text-white focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 resize-none transition-all"
+                    className="w-full h-24 rounded-xl border border-border bg-secondary px-4 py-2 text-sm text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary/45 focus-visible:border-primary/50 resize-none transition-all"
                     placeholder="Brief details about the event..."
                     value={formData.description}
                     onChange={handleChange}

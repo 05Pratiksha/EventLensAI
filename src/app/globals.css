@@ -1,27 +1,89 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #FAF9F6; /* Alabaster Silk White */
+  --foreground: #121214; /* Luxury Onyx/Charcoal */
+  
+  --primary: #C5A039; /* Deep High-Contrast Gold */
+  --primary-foreground: #FFFFFF;
+  
+  --secondary: #F6F5F0; /* Soft warm ivory surface */
+  --secondary-foreground: #121214;
+  
+  --muted: #EAEAE4; /* Muted warm grey */
+  --muted-foreground: #5C5C63; /* Subdued dark zinc */
+  
+  --accent: #A38A4D; /* Bronze Gold */
+  --accent-foreground: #FFFFFF;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #FAF9F6;
+  
+  --border: rgba(18, 18, 20, 0.08); /* Delicate dark border */
+  --input: #FFFFFF;
+  --ring: #C5A039;
+  
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(18, 18, 20, 0.05);
+  --glass-shadow: rgba(163, 138, 77, 0.06);
+}
+
+.dark {
+  --background: #060608; /* Cinematic deep black */
+  --foreground: #F3F4F6; /* Light gray text */
+  
+  --primary: #E5C158; /* Pale metallic gold */
+  --primary-foreground: #060608;
+  
+  --secondary: #121214; /* Dark surface */
+  --secondary-foreground: #F3F4F6;
+  
+  --muted: #18181C; /* Dark card backing */
+  --muted-foreground: #A1A1AA; /* Muted silver zinc */
+  
+  --accent: #E5C158;
+  --accent-foreground: #060608;
+  
+  --destructive: #EF4444;
+  --destructive-foreground: #F3F4F6;
+  
+  --border: rgba(255, 255, 255, 0.06); /* Thin light border */
+  --input: #121214;
+  --ring: #E5C158;
+  
+  --glass-bg: rgba(6, 6, 8, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+}
+
 @theme {
-  --color-background: #060608;
-  --color-foreground: #f3f4f6;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   
-  --color-primary: #E5C158;
-  --color-primary-foreground: #060608;
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   
-  --color-secondary: #121214;
-  --color-secondary-foreground: #f3f4f6;
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
   
-  --color-muted: #18181c;
-  --color-muted-foreground: #a1a1aa;
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
   
-  --color-accent: #E5C158;
-  --color-accent-foreground: #060608;
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
   
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #f3f4f6;
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
   
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-input: #121214;
-  --color-ring: #E5C158;
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
+  --color-glass-shadow: var(--glass-shadow);
   
   --radius-lg: 0.75rem;
   --radius-md: calc(0.75rem - 2px);
@@ -42,38 +104,51 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border transition-colors duration-300;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
     background-image: 
-      radial-gradient(at 0% 0%, rgba(229, 193, 88, 0.015) 0px, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(163, 138, 77, 0.015) 0px, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(229, 193, 88, 0.02) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(163, 138, 77, 0.02) 0px, transparent 50%);
     background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .dark body {
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(229, 193, 88, 0.012) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(163, 138, 77, 0.012) 0px, transparent 50%);
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/[0.02] backdrop-blur-md border border-white/5;
+    @apply bg-glass-bg backdrop-blur-md border border-glass-border;
   }
   
-  .glass-dark {
-    @apply bg-black/60 backdrop-blur-2xl border border-white/5;
-  }
-
   .glass-luxury {
-    @apply bg-neutral-950/45 backdrop-blur-3xl border border-white/[0.04] shadow-[inset_0_1px_1px_rgba(255,255,255,0.02),0_24px_48px_-12px_rgba(0,0,0,0.5)];
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(64px);
+    -webkit-backdrop-filter: blur(64px);
+    border: 1px solid var(--glass-border);
+    box-shadow: inset 0 1px 1px var(--glass-border), 0 24px 48px -12px var(--glass-shadow);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-zinc-800 via-zinc-900 to-zinc-600;
+  }
+  
+  .dark .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-zinc-100 to-zinc-400;
   }
 
   .text-gradient-luxury {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1C1917] via-[#A38A4D] to-[#8C7438];
+  }
+  
+  .dark .text-gradient-luxury {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-[#F9F6F0] via-[#E5C158] to-[#A38A4D];
   }
 }
-
-

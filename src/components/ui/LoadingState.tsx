@@ -14,7 +14,7 @@ export function LoadingState({ message = 'Loading...' }: LoadingStateProps) {
       >
         <Loader2 className="w-8 h-8 text-primary mb-4" />
       </motion.div>
-      <p className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest animate-pulse">{message}</p>
+      <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest animate-pulse">{message}</p>
     </div>
   );
 }

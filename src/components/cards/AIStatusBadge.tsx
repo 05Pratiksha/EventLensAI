@@ -26,7 +26,7 @@ export function AIStatusBadge({ status, matches = 0 }: AIStatusBadgeProps) {
   }
 
   return (
-    <Badge variant="outline" className="text-muted-foreground border-white/10">
+    <Badge variant="outline" className="text-muted-foreground border-border">
       <Sparkles className="w-3 h-3 mr-1 opacity-50" />
       AI Ready
     </Badge>

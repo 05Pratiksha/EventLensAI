@@ -27,7 +27,7 @@ export function EventCard({ event, index = 0 }: EventCardProps) {
       transition={{ delay: index * 0.1 }}
     >
       <Link href={`/events/${event.id}`}>
-        <Card className="overflow-hidden group hover:border-primary/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(229,193,88,0.06)] h-full flex flex-col cursor-pointer bg-neutral-950/40">
+        <Card className="overflow-hidden group hover:border-primary/20 transition-all duration-300 hover:shadow-[0_0_30px_rgba(229,193,88,0.06)] h-full flex flex-col cursor-pointer bg-secondary/40 dark:bg-neutral-950/40">
           <div className="relative h-48 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 to-transparent z-10" />
             <img 
@@ -46,27 +46,27 @@ export function EventCard({ event, index = 0 }: EventCardProps) {
           </div>
           
           <div className="p-5 flex flex-col flex-1">
-            <h3 className="text-xl font-bold mb-2 text-white group-hover:text-primary transition-colors">{event.title}</h3>
+            <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors">{event.title}</h3>
             
             <div className="flex items-center text-sm text-muted-foreground mb-4">
               <Calendar className="w-4 h-4 mr-2" />
               {event.date}
             </div>
-
-            <div className="mt-auto grid grid-cols-2 gap-4 pt-4 border-t border-white/5">
+ 
+            <div className="mt-auto grid grid-cols-2 gap-4 pt-4 border-t border-border">
               <div className="flex flex-col">
                 <span className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
                   <ImageIcon className="w-3 h-3" />
                   Photos
                 </span>
-                <span className="font-semibold text-white">{event.photoCount.toLocaleString()}</span>
+                <span className="font-semibold text-foreground">{event.photoCount.toLocaleString()}</span>
               </div>
               <div className="flex flex-col">
                 <span className="text-xs text-muted-foreground mb-1 flex items-center gap-1">
                   <Sparkles className="w-3 h-3 text-primary" />
                   Matches
                 </span>
-                <span className="font-semibold text-white">{event.matchedCount ? event.matchedCount.toLocaleString() : '0'}</span>
+                <span className="font-semibold text-foreground">{event.matchedCount ? event.matchedCount.toLocaleString() : '0'}</span>
               </div>
             </div>
           </div>

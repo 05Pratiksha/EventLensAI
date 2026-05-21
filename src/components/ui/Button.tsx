@@ -10,12 +10,12 @@ const buttonVariants = cva(
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-white/10 bg-transparent hover:bg-white/5 hover:border-primary/30 text-white transition-all",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-white/5",
-        ghost: "hover:bg-white/5 hover:text-primary transition-all",
+        outline: "border border-border bg-transparent hover:bg-foreground/5 hover:border-primary/30 text-foreground transition-all",
+        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80 border border-border",
+        ghost: "hover:bg-foreground/5 text-muted-foreground hover:text-primary transition-all",
         link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-gradient-to-r from-[#E5C158] via-[#F9F6F0] to-[#A38A4D] text-[#060608] hover:brightness-110 border border-[#E5C158]/30 shadow-[0_0_15px_rgba(229,193,88,0.15)] hover:shadow-[0_0_25px_rgba(229,193,88,0.3)] transition-all font-semibold active:scale-[0.98]",
-        glass: "bg-white/[0.03] backdrop-blur-md border border-white/10 text-white hover:bg-white/10 hover:border-primary/20",
+        premium: "bg-gradient-to-r from-[#E5C158] via-[#FAF9F6] to-[#A38A4D] text-[#060608] hover:brightness-110 border border-[#E5C158]/30 shadow-[0_0_15px_rgba(229,193,88,0.15)] hover:shadow-[0_0_25px_rgba(229,193,88,0.3)] transition-all font-semibold active:scale-[0.98] dark:from-[#E5C158] dark:via-[#F9F6F0] dark:to-[#A38A4D]",
+        glass: "bg-foreground/[0.02] backdrop-blur-md border border-border text-foreground hover:bg-foreground/[0.05] hover:border-primary/20",
       },
       size: {
         default: "h-10 px-4 py-2",
